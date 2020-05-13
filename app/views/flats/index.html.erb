@@ -20,7 +20,7 @@
         <div class="card-footer">
           <%= link_to "More info", flat_path(flat) %> |
           <%= link_to "edit", edit_flat_path(flat)  %> |
-          <%= link_to "delete", flat_path(flat), method:"delete", confirm: "yes or no"  %>
+          <%= link_to "delete", flat_path(flat), method:"delete", data: { confirm: "Are you sure?" }  %>
         </div>
       </div>
     <% end %>
