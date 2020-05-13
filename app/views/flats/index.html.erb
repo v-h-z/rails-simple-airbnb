@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="number">
+    <p>number of flats : <%= @flats.size %></p>
+  </div>
+  <div class="cards">
+    <% @flats.each do |flat| %>
+      <div class="card">
+        <div class="card-body">
+          <div class="name">
+            <h5><%= flat.name %></h5>
+          </div>
+          <div class="address">
+            <%= flat.address %>
+          </div>
+          <div class="infos">
+            <span><i class="fas fa-users"></i> <%= flat.number_of_guests %></span>
+            <span><i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <%= link_to "More info", flat_path(flat) %> |
+          <%= link_to "edit", edit_flat_path(flat)  %> |
+          <%= link_to "delete", flat_path(flat), method:"delete", confirm: "yes or no"  %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
